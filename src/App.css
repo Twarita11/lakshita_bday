@@ -16,10 +16,11 @@ body{
   background:#f8f5ef;
 }
 
-.container{
-  width:100vw;
-  height:100vh;
-  display:flex;
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: relative;
 }
 
 .left{
@@ -67,7 +68,7 @@ body{
 }
 
 .birthday-text{
-  font-size:10rem;
+  font-size:6rem;
   line-height:0.9;
 
   text-align:center;
@@ -192,7 +193,7 @@ body {
 }
 
 .birthday-text {
-  font-size: 10rem;
+  font-size: 6rem;
   line-height: 0.9;
   text-align: center;
   color: #8b1a1a;
@@ -287,4 +288,28 @@ body {
 
 .camera-btn span {
   display: none;
+}
+
+.right {
+  position: relative;
+}
+
+.sticker {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  animation: shake 0.4s ease-in-out infinite alternate;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.birthday-text {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes shake {
+  0%   { transform: rotate(-4deg) scale(1); }
+  100% { transform: rotate(4deg)  scale(1.05); }
 }
