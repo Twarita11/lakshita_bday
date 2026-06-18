@@ -1,0 +1,266 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,
+body,
+#root{
+  width:100%;
+  height:100%;
+}
+
+body{
+  overflow:hidden;
+  background:#f8f5ef;
+}
+
+.container{
+  width:100vw;
+  height:100vh;
+  display:flex;
+}
+
+.left{
+  width:50%;
+  height:100%;
+  position:relative;
+  overflow:hidden;
+}
+
+.right{
+  width:50%;
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:2rem;
+}
+.vinyl{
+  width:700px;
+  height:700px;
+
+  border-radius:50%;
+
+  background:black;
+
+  position:absolute;
+
+  left:-350px;
+  top:50%;
+
+  animation:spin 12s linear infinite;
+
+}
+
+.center-hole{
+  width:120px;
+  height:120px;
+
+  border-radius:50%;
+
+  background:white;
+
+  position:absolute;
+
+  top:50%;
+  left:50%;
+
+  transform:translate(-50%,-50%);
+}
+
+.birthday-text{
+  font-size:6rem;
+  line-height:0.9;
+
+  text-align:center;
+
+  color:#222;
+}
+
+@keyframes spin{
+  from{
+    transform:translateY(-50%) rotate(0deg);
+  }
+
+  to{
+    transform:translateY(-50%) rotate(360deg);
+  }
+}
+
+.center-photo{
+  width:220px;
+  height:220px;
+
+  border-radius:50%;
+  object-fit:cover;
+
+  position:absolute;
+
+  top:50%;
+  left:50%;
+
+  transform:translate(-50%,-50%);
+
+  border:4px solid white;
+}
+
+.cd-image{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.vinyl{
+  cursor:pointer;
+
+  transition:all 0.3s ease;
+}
+
+.vinyl:hover{
+  filter:brightness(1.1);
+
+  transform:translateY(-50%) scale(1.03);
+}
+
+.center-photo{
+  transition:all 0.3s ease;
+}
+
+.center-photo:hover{
+  transform:
+    translate(-50%,-50%)
+    scale(1.08);
+
+  box-shadow:
+    0 0 30px rgba(255,255,255,.6);
+}
+
+.polaroid-wall{
+  width:100%;
+  height:100%;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-size:3rem;
+}
+.polaroid-wall {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.polaroid {
+  position: absolute;
+  width: 28%;
+  background: #fffdf5;
+  padding: 8px 8px 28px 8px;
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.25);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.06) !important;
+  box-shadow: 6px 6px 20px rgba(0,0,0,0.35);
+  z-index: 10;
+}
+
+.polaroid img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+}
+
+.polaroid-caption {
+  text-align: center;
+  margin-top: 6px;
+  font-size: 1rem;
+}
+canvas {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 9999 !important;
+  pointer-events: none;
+}
+
+/* ── 10 Things I Hate About You theme ── */
+body {
+  background: #f5e6c8;
+  font-family: 'Georgia', serif;
+}
+
+.birthday-text {
+  font-size: 6rem;
+  line-height: 0.9;
+  text-align: center;
+  color: #8b1a1a;
+  text-shadow: 3px 3px 0px #d4a017;
+}
+
+/* ── Popup polaroid (left side) ── */
+.popup-polaroid {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-20%, -50%) rotate(-2deg);
+  width: 55%;
+  background: #fffdf5;
+  padding: 12px 12px 48px 12px;
+  box-shadow: 6px 6px 24px rgba(0,0,0,0.4);
+  z-index: 100;
+}
+
+.popup-polaroid img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+}
+
+.popup-caption {
+  text-align: center;
+  margin-top: 10px;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ── Post-it note ── */
+.postit {
+  width: 320px;
+  height: 320px;
+  background: #f7d327;
+  padding: 24px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.25);
+  transform: rotate(1.5deg);
+  position: relative;
+}
+
+.postit::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 36px;
+  background: rgba(0,0,0,0.07);
+}
+
+.postit-text {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Courier New', monospace;
+  font-size: 1.1rem;
+  color: #333;
+  padding-top: 40px;
+  line-height: 1.8;
+  margin: 0;
+  word-wrap: break-word;
+}
